@@ -21,7 +21,7 @@ private func load(){
 	var error : Unmanaged<CFError>?
 	let provider = CGDataProvider(data: inData as! CFData)
 	let font = CGFont(provider!)
-	if !CTFontManagerRegisterGraphicsFont(font, &error) {
+	if !CTFontManagerRegisterGraphicsFont(font!, &error) {
 		let errorDescription = CFErrorCopyDescription(error!.takeRetainedValue())
 		NSLog("Failed to load font: %@", errorDescription as! String);
 	}
